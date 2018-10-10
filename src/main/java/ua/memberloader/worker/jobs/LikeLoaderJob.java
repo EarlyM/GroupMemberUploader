@@ -124,7 +124,6 @@ public class LikeLoaderJob extends BaseJob implements Runnable {
 
                 uri = builder.buildURI(VKMethod.GET_LIKES, likesParameter);
                 String json = caller.send(uri);
-                System.out.println(json);
                 availableLikes = parser.getFieldValue(json, JsonFields.COUNT, Integer.class);
 
                 JSONArray likes = parser.getFieldValue(json, JsonFields.ITEMS, JSONArray.class);
